@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Are You Still Alive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 1em 0;
+        }
+        .contact-info {
+            font-size: 1.1rem;
+            color: #0066cc;
+            font-weight: bold;
+            margin: 1em 0;
+        }
+        a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #004080;
+        }
+        .counter {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 1em 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Are You Still Alive?</h1>
+        <p>Hey! It's great to see you here. If you're looking to get in touch with me, here are my contact options:</p>
+        <div class="contact-info">
+            <p>Phone: +91 7679 739418</p>
+            <p>Email 1: <a href="mailto:malay88patra@gmail.com">malay88patra@gmail.com</a></p>
+            <p>Email 2: <a href="mailto:malay77patra@gmail.com">malay77patra@gmail.com</a></p>
+        </div>
+        <p class="counter">Time since we last met: <span id="time-counter">Calculating...</span></p>
+        <p>Looking forward to reconnecting!</p>
+    </div>
+
+    <script>
+        function updateCounter() {
+            const startDate = new Date(); // Set this to a specific date if you want
+            const now = new Date();
+            const timeDiff = now - startDate;
+            const seconds = Math.floor((timeDiff / 1000) % 60);
+            const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+            const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+            document.getElementById("time-counter").textContent = 
+                `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+        }
+
+        setInterval(updateCounter, 1000); // Update every second
+    </script>
+</body>
+</html>
